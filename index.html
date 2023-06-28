@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aoboshi+One&family=Bree+Serif&family=Croissant+One&family=Suwannaphum:wght@300;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./CSS/styles.css">
+        <title>Vinos</title>
+    </head>
+    <header>
+        <h1>VINOS Y MAS VINOS</h1>
+        <nav>
+            <ul class="navlist">
+                <li><a href="#">Inicio</a></li>
+                <li>
+                    <a href="#">Vinos</a>
+                    <ul>
+                        <li><a href="#">Tintos</a></li>
+                        <li><a href="#">Blancos</a></li>
+                        <li><a href="#">Rosados</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Espumantes</a>
+                    <ul>
+                        <li><a href="#">Extra Brut</a></li>
+                        <li><a href="#">Brut</a></li>
+                        <li><a href="#">Extra Seco</a></li>
+                        <li><a href="#">Dulce</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="img-portada">
+        <img class="img-portada-sanjuan" src="./Img/img-header-bodegasj.jpg" alt="">
+    </div>
+
+
+    <main>
+        <section>
+            <h2 class="h2-quienesomos">¿QUIENES SOMOS?</h2>
+            <p class="h2-quienesomos">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem consectetur
+                quasi repudiandae tempora culpa dolor voluptas sed illum quas, veniam eligendi numquam rem eveniet
+                quidem quod sequi odio cum? Commodi.</p>
+        </section>
+
+        <h3 class="titleseccionvinostintos">VINOS TINTOS</h3>
+
+        <sect ion class="containersectiosvinotinto">
+          
+            <div class="cardsectionvinotinto">
+              <div class="cardvinotinto">
+                <img class="img-vinostintos" src="./Img/Iscay-malbec-cabernet.trapiche.jpg" alt="vinoIscaymalbec.bodegatrapiche">
+                <p>Lugar de origen y bodega</p>
+                <p>TITULO DEL VINO</p>
+                <p>Pequeña info del vino</p>
+                <input type="number" id="precioProducto" placeholder="Precio del producto">
+                <input type="number" id="costoEnvio" placeholder="Costo de envío">
+                <p class="precio">$1200</p>
+                <p id="total"></p>
+                <button > <a href="#"></a>Conocer mas</button>
+                <button onclick="calcularTotal(1)">Comprar</button>
+              </div>
+            </div>
+
+          </sect>
+    </main>
+    <script src="./JS/js-proyecto.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+/*font-family: 'Abril Fatface', cursive;
+font-family: 'Aoboshi One', serif;
+font-family: 'Bree Serif', serif;
+font-family: 'Croissant One', cursive;
+font-family: 'Suwannaphum', serif;*/
+
+header {
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+
+}
+
+.navlist {
+    background-color: rgba(154, 25, 2, 0.796);
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navlist li a {
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.navlist>li {
+    float: left;
+}
+
+.navlist li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.navlist li:hover>ul {
+    display: block;
+}
+
+.img-portada {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+
+}
+
+.img-portada-sanjuan {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 1000px;
+    height: 500px;
+
+}
+
+
+.h2-quienesomos{
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.titleseccionvinostintos{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: darkred;
+    color:white;
+    font-family: 'Aoboshi One', serif;
+}
+.cardsectionvinotinto{
+    padding: 50px;
+}
+
+.img-vinostintos{
+    height: 350px;
+    width: 200px;
+}
