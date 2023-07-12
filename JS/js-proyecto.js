@@ -1,77 +1,102 @@
-function preguntarEdad() {
-  let edad = prompt("Ingresa tu edad");
-  return edad;
-}
 
-function validarEdad(edad) {
-  if (edad >= 18) {
-    alert("Puedes entrar a la página.");
+/*function verificarEdad() {
+  const edad = prompt("Por favor, ingresa tu edad:");
+
+  if (edad < 18) {
+    alert("Lo siento, eres menor de edad. No puedes ingresar.");
+    document.getElementById("paginavinos").style.display = "none";
   } else {
-    alert("No puedes entrar a la página.");
+    console.log("Mostrar la página aquí.");
+    // Mostrar la página
+    document.getElementById("paginavinos").style.display = "block";
   }
 }
-
-let edadUsuario = 0; // Asigna un valor inicial a la variable
-
-// Llama a la función preguntarEdad() y pasa el valor devuelto a validarEdad()
-edadUsuario = preguntarEdad();
-
-validarEdad(edadUsuario);
+verificarEdad();*/
 
 
-function Producto(precio, envio) {
-  this.precio = precio;
-  this.envio = envio;
-}
 
-Producto.prototype.calcularTotal = function() {
-  return this.precio + this.envio;
-}
 
-function calcularTotal(index) {
-  if (index === 1) {
-    let precioProducto = parseFloat(document.getElementById('precioProducto').value);
-    let costoEnvio = parseFloat(document.getElementById('costoEnvio').value);
+function verificarEdad() {
+  const edad = prompt("Por favor, ingresa tu edad:");
 
-    let precioHTML = parseFloat(document.querySelector('.precio').innerHTML.replace('$', ''));
-
-    if (precioProducto === precioHTML) {
-      let producto = new Producto(precioProducto, costoEnvio);
-      let total = producto.calcularTotal();
-      document.getElementById('total').innerHTML = 'Total: $' + total.toFixed(2);
-    } else {
-      alert('El precio ingresado no es correcto.');
-    }
-  }
-}
-
-function calcularEnvio() {
-  let precioProducto = 100; // Precio del producto (ejemplo)
-  let pais = prompt("Ingresa tu país:");
-
-  let envios = [
-    { pais: 'Argentina', costo: 10 },
-    { pais: 'Brasil', costo: 15 },
-    { pais: 'Chile', costo: 20 },
-    // Agrega más países y costos de envío según sea necesario
-  ];
-
-  let costoEnvio = 0;
-
-  for (let i = 0; i < envios.length; i++) {
-    if (envios[i].pais.toLowerCase() === pais.toLowerCase()) {
-      costoEnvio = envios[i].costo;
-      break;
-    }
-  }
-
-  if (costoEnvio !== 0) {
-    let total = precioProducto + costoEnvio;
-    alert('El costo de envío para ' + pais + ' es: $' + costoEnvio );
+  if (edad < 18) {
+    alert("Lo siento, eres menor de edad. No puedes ingresar.");
+    document.getElementById("paginavinos").style.display = "none";
   } else {
-    alert('Lo sentimos, no realizamos envíos a ' + pais + '.');
+    console.log("Mostrar la página aquí.");
+    // Mostrar la página
+    document.getElementById("paginavinos").style.display = "block";
   }
 }
 
-calcularEnvio();
+document.addEventListener("DOMContentLoaded", function() {
+  verificarEdad();
+});
 
+
+
+// Obtener referencia al botón
+const boton = document.getElementById("btn-vermas");
+
+// Agregar evento de clic al botón
+boton.addEventListener("click", function () {
+  // Redireccionar a la página deseada
+  window.location.href = "https://trapiche.com.ar/comin/linea/iscay/";
+});
+
+const botonComprar = document.getElementById("btn-comprar");
+const selectPaises = document.getElementById("selectPaises");
+
+botonComprar.addEventListener("click", function () {
+  selectPaises.style.display = "block";
+});
+
+
+
+
+// Obtener elementos del DOM
+const btnComprar = document.getElementById("btn-comprar");
+const selecPaises = document.getElementById("selectPaises");
+const costoEnvio = document.getElementById("costoEnvio");
+const precio = document.getElementById("precio");
+const totalPagar = document.getElementById("totalPagar");
+
+// Asociar evento de click al botón Comprar
+btnComprar.addEventListener("click", mostrarSeleccionPais);
+
+// Función para mostrar la selección del país
+function mostrarSeleccionPais() {
+  selectPaises.style.display = "block";
+}
+
+// Asociar evento de cambio al campo de selección de países
+selectPaises.addEventListener("change", calcularTotalPagar);
+
+// Función para calcular el total a pagar
+function calcularTotalPagar() {
+  const opcionSeleccionada = selectPaises.value;
+  const costoProducto = 2300;
+  let costoEnvioSeleccionado = 0;
+
+  if (opcionSeleccionada === "sanjuan") {
+    costoEnvioSeleccionado = 1000;
+  } else if (opcionSeleccionada === "mendoza") {
+    costoEnvioSeleccionado = 1000;
+  } else if (opcionSeleccionada === "sanluis") {
+    costoEnvioSeleccionado = 1200;
+  } else if (opcionSeleccionada === "buenosaires") {
+    costoEnvioSeleccionado = 2000;
+  } else if (opcionSeleccionada === "rosario") {
+    costoEnvioSeleccionado = 2000;
+  } else if (opcionSeleccionada === "tucuman") {
+    costoEnvioSeleccionado = 2000;
+  } else if (opcionSeleccionada === "larioja") {
+    costoEnvioSeleccionado = 2000;
+  } else if (opcionSeleccionada === "cordoba") {
+    costoEnvioSeleccionado = 2000;
+  }
+
+  costoEnvio.textContent = "Costo de envío: $" + costoEnvioSeleccionado;
+  const total = costoProducto + costoEnvioSeleccionado;
+  totalPagar.textContent = "Total a pagar: $" + total;
+}
