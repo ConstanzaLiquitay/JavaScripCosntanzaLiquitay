@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="./CSS/styles.css">
         <title>Vinos</title>
     </head>
-    <header  class="header">
+    <header class="header">
         <h1>VINOS Y MAS VINOS</h1>
         <nav>
             <ul class="navlist">
@@ -32,73 +32,87 @@
         </nav>
     </header>
 
-    <div class="img-portada">
-        <img class="img-portada-sanjuan" src="./Img/img-header-bodegasj.jpg" alt="">
-    </div>
 
     <main>
         <section class="section-nosotros">
-            <p class="descripcion-nosotros"> En esta pagina vas a encontrar mucha informacion sobre los mejores vinos de San Juan.</p>
-            <img class="img-sectionnosotros" src="./Img/img.descripcion.index.jpg" alt="imgvinoservido">
+            <div class="conteniner-title-secnosotros">
+                <p class="title-section-nosotros">NOSOTROS</p>
+                <p class="descripcion-nosotros"> En esta pagina vas a encontrar mucha informacion sobre los mejores
+                    vinos de San Juan.</p>
+            </div>
         </section>
         <h2>BODEGAS ASOCIADAS.</h2>
-        <div class="bodegas">
             <div class="carrusel-logobodegas">
                 <img class="logobodega" src="./Img/logosbodegas/4.png" alt="logobodegadonbosco">
                 <img class="logobodega" src="./Img/logosbodegas/3.png" alt="logobodegagraffigna">
                 <img class="logobodega" src="./Img/logosbodegas/2.png" alt="logobodegakantaka">
                 <img class="logobodega" src="./Img/logosbodegas/1.png" alt="logobodegatrapiche">
             </div>
-        </div>
 
         <h2>VINOS DE NUESTRA SECCION</h2>
         <h3>BODEGA TRAPICHE</h3>
         <section class="container-card-vinos">
             <div class="card-vinos">
                 <img class="imgcard" src="./Img/vinotrapiche.jpg" alt="">
-                <p>Descripcion del vino</p>
-                <p id="precio">Costo: $2.300</p>
-                <button id="btn-vermas">Ver Mas</button>
+                <p>Isac - Malbec Cabernet Franc</p>
+                <p>De color púrpura intenso, este vino combina aromas a violetas, frutas rojas maduras, sutiles notas especiadas y taninos generosos. El Malbec y el Cabernet Franc hacen una perfecta combinación que resulta en un ejemplar elegante y de final diáfano.</p>
+                <p id="precio">$2.300</p>
+                <button id="btn-vermas">Mas Info. </button>
                 <button id="btn-comprar">Comprar</button>
                 <select name="" id="selectPaises">
-                  <option value="">Seleccione su país</option>
-                  <option value="sanjuan">San Juan</option>
-                  <option value="mendoza">Mendoza</option>
-                  <option value="sanluis">San Luis</option>
-                  <option value="buenosaires">Buenos Aires</option>
-                  <option value="rosario">Rosario</option>
-                  <option value="tucuman">Tucuman</option>
-                  <option value="larioja">La Rioja</option>
-                  <option value="cordoba">Cordoba</option>
+                    <option value="">Seleccione su país</option>
+                    <option value="sanjuan">San Juan</option>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="sanluis">San Luis</option>
+                    <option value="buenosaires">Buenos Aires</option>
+                    <option value="rosario">Rosario</option>
+                    <option value="tucuman">Tucuman</option>
+                    <option value="larioja">La Rioja</option>
+                    <option value="cordoba">Cordoba</option>
                 </select>
                 <p id="costoEnvio"></p>
                 <p id="totalPagar"></p>
-              </div>
-              
+                <button id="btn-finalizarcompra">Finalizar compra</button>
+            </div>
+
+
 
             <div class="card-vinos">
                 <img class="imgcard" src="./Img/vino2trapiche.png" alt="">
-                <p>Descripcion del vino</p>
-                <p>$1.500</p>
-                <button id="btn-vermas">Ver Mas</button>
-                <button>Comprar</button>
-                <select name="" id="">
+                <p>Terroir Series - Malbec</p>
+                <p>De color rojo violáceo intenso con aromas a frutos del bosque como moras y arándanos. En boca es fresco y redondo al comienzo con taninos dulces y tensos que le dan jugosidad y amplitud y elegancia en boca.</p>
+                <p id="preciovino2">$4.000</p>
+                <button id="btn-vermas2">Mas Info. </button>
+                <button id="btn-comprar2">Comprar</button>
+                <select name="" id="selectPaises2">
                     <option value="">Seleccione su país</option>
-                    <option value="">San Juan</option>
-                    <option value="">Mendoza</option>
-                    <option value="">San Luis</option>
-                    <option value="">Buenos Aires</option>
-                    <option value="">Rosario</option>
-                    <option value="">Tucuman</option>
-                    <option value="">La Rioja</option>
-                    <option value="">Cordoba</option>
-                  </select>
+                    <option value="sanjuan">San Juan</option>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="sanluis">San Luis</option>
+                    <option value="buenosaires">Buenos Aires</option>
+                    <option value="rosario">Rosario</option>
+                    <option value="tucuman">Tucuman</option>
+                    <option value="larioja">La Rioja</option>
+                    <option value="cordoba">Cordoba</option>
+                </select>
+                <p id="costoEnvio2"></p>
+                <p id="totalPagar2"></p>
+                <button id="btn-finalizarcompra2">Finalizar compra</button>
             </div>
-
         </section>
 
+
+<div id="container-Productos"  class="productos">
+
+
+
+    
+</div>
+
+
+
     </main>
-    <script src="./JS/js-proyecto.js"></script>
+<script src="./JS/js-proyecto.js"></script>
 </body>
 
 </html>
