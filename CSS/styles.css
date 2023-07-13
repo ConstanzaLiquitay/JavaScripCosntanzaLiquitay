@@ -1,6 +1,6 @@
 * {
     padding: 0px;
-    margin: 0px;
+    margin: 3px;
     text-decoration: none;
 }
 
@@ -19,8 +19,9 @@ font-family: 'Suwannaphum', serif;*/
 header {
     font-family: 'Bree Serif', serif;
     font-size: 20px;
-    background-color:#9a1902cb ;
-
+    background-color: rgb(0, 0, 0);
+    width: auto;
+    height: 500px;
 }
 
 /*barra de navegacion*/
@@ -35,7 +36,7 @@ header {
 
 .navlist li a {
     color: #ffffff;
-    background-color:#9a190255 ;
+    background-color: #9a190255;
     padding: 20px;
     display: block;
     text-decoration: none;
@@ -54,14 +55,13 @@ header {
 .navlist li:hover>ul {
     display: block;
 }
-
-
-/* img de portada */
-
-.img-portada {
-    display: flex;
-    justify-content: center;
-
+/* imagenes del index */
+.header{
+    background-image: url(../Img/img-header-bodegasj.jpg);
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .img-portada-sanjuan {
@@ -69,62 +69,87 @@ header {
     padding-bottom: 10px;
     width: 1000px;
     height: 500px;
+
+}
+
+/*quienes somos*/
+.section-nosotros{
+    margin-top: 80px;
+    height: 1000px;
+    background-image: url(../Img/img.descripcion.index.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
     
 }
-/*quienes somos*/
 
+.conteniner-title-secnosotros{
+    background-color: rgba(165, 42, 42, 0.512);
+    width: 400px;
+    height: 300px;
+    color: #ffffff;
+    position:relative;
+    top: 10px;
+    left: 5px;
+    
 
-.section-nosotros .descripcion-nosotros {
-font-size: 50px;
-font-family: 'Abril Fatface';
-padding: 10px;
-margin: 30px;
 }
 
-.img-sectionnosotros{
-    width: 100vw;
-    height: 1000px;
+.conteniner-title-secnosotros .title-section-nosotros{
+    font-family:'Abril Fatface' ;
+    font-size:40px ;
+    padding: 10px;
+    display: flex;
+justify-content: center;
 }
+
+
 
 /* secccion bodegas acociadas*/
 
-h2{
+h2 {
     font-family: 'Aoboshi One';
     font-size: 30px;
-display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin:10px
+    margin: 10px
 }
 
 /*carrusel bodegas asociadas*/
-.logobodega{
-    width: 280px;
+.logobodega {
+    width: 250px;
     height: auto;
     margin: 15px;
     border-radius: 80px;
-
+    
 }
-.carrusel-logobodegas{
+.logobodega:hover{
+transform: rotate(10deg);
+}
+.carrusel-logobodegas {
     background-color: #785218;
 }
 
+
 /* card vinos */
-h3{
-    font-family:'Suwannaphum' ;
+h3 {
+    font-family: 'Suwannaphum';
     font-size: 50px;
     display: flex;
     justify-content: center;
 }
 
-.container-card-vinos{
+.container-card-vinos {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-row: repeat(1,1fr);
-    
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: repeat(1, 1fr);
+
 
 }
-.imgcard{
+
+.imgcard {
     width: 300px;
     height: 500px;
 
