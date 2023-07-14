@@ -58,8 +58,27 @@ Producto.forEach(productos => {
   const addButton = productDiv.querySelector('.agregar-carrito');
   addButton.addEventListener('click', () => {
     //Agregar al carrito 
+    debugger
+    carrito.push(producto);
+
+    //Guardar carrito
+    guardarCarrito(carrito);
+
+    //Mostrar el modal
+    const modal = documente.getElementyById('modal');
+    modal.innerHTML = `
+    <div class="modal-content">
+    <h3> ${producto.id} </h3>
+    <h3> ${producto.nombre} </h3>
+    <h3> ${producto.precio} </h3>
+    </div>
+    `
+ modal.style.display = 'block'
 
   })
   
 });
 
+function guardarCarrito(carrito){
+  localStorage.setItem('carrito', JSON, stingify(carrito))
+};
