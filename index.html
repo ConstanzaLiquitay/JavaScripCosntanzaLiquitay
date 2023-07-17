@@ -13,56 +13,72 @@
             href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aoboshi+One&family=Bree+Serif&family=Croissant+One&family=Suwannaphum:wght@300;900&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="./CSS/styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Vinos</title>
+
     </head>
+
+
     <header class="header">
         <h1>VINOS Y MAS VINOS</h1>
-        <nav>
-            <ul class="navlist">
-                <li><a href="#">Inicio</a></li>
-                <li>
-                    <a href="#">Bodegas</a>
-                    <ul>
-                        <li><a href="#">Grafigna</a></li>
-                        <li><a href="#">Trapiche</a></li>
-                        <li><a href="#">Kantaka</a></li>
-                        <li><a href="#">Don Bosco</a></li>
-                    </ul>
-                </li>
-        </nav>
-    </header>
-
-
-    <main>
-        <section class="section-nosotros">
-            <div class="conteniner-title-secnosotros">
-                <p class="title-section-nosotros">NOSOTROS</p>
-                <p class="descripcion-nosotros"> En esta pagina vas a encontrar mucha informacion sobre los mejores
-                    vinos de San Juan.</p>
-            </div>
-        </section>
         <h2>BODEGAS ASOCIADAS.</h2>
-            <div class="carrusel-logobodegas">
-                <img class="logobodega" src="./Img/logosbodegas/4.png" alt="logobodegadonbosco">
-                <img class="logobodega" src="./Img/logosbodegas/3.png" alt="logobodegagraffigna">
-                <img class="logobodega" src="./Img/logosbodegas/2.png" alt="logobodegakantaka">
-                <img class="logobodega" src="./Img/logosbodegas/1.png" alt="logobodegatrapiche">
+        <div class="carrusel-logobodegas">
+            <img class="logobodega" src="./Img/logosbodegas/4.png" alt="logobodegadonbosco">
+            <img class="logobodega" src="./Img/logosbodegas/3.png" alt="logobodegagraffigna">
+            <img class="logobodega" src="./Img/logosbodegas/2.png" alt="logobodegakantaka">
+            <img class="logobodega" src="./Img/logosbodegas/1.png" alt="logobodegatrapiche">
+        </div>
+
+        <form action="wineForm" action ="">
+            <div>
+                <h2>VINOS</h2>
+                <h3>AÑADE TUS GUSTOS PARA LA CAJA DE ESTE MES</h3>
             </div>
 
-        <h2>VINOS DE NUESTRA SECCION</h2>
-        <h3>BODEGA TRAPICHE</h3>
+            <div>
+                <strong>Dinos tu numero de socio.</strong><br>
+                <input type="number" name="" id="numerodesocio">
+            </div>
+            <label for="bodega"></label>
+            <select name="bodega" id="">
+                <option value="">Seleccione una bodega</option>
+                <option value="Vinotinto"> Trapiche </option>
+                <option value="vinoblanco"> Don Bosco</option>
+                <option value="espumantes">Grafigna San Juan</option>
+                <option value="villaborjas">Villa Borjas</option>
+                <option value="cualquiera">Cualquiera</option>
+            </select>
+            </div>
 
-<div id="container-productos"  class="productos">
 
 
+            <div>
+                <strong>¿Que tipo de vino te gustaria que te mandemos en tu box? </strong>
+                <input type="checkbox" name="tipodevino" id="vinotinto" value="tinto">
+                <label for="small">Vino Tinto</label>
+                <input type="checkbox" name="tipodevino" id="vinoblanco" value="blanco">
+                <label for="small">Vino Blanco</label>
+                <input type="checkbox" name="tipodevino" id="vinorosado" value="vinorosado">
+                <label for="small">Vino Rosado</label>
+                <input type="checkbox" name="tipodevino" id="vinoespumante" value="espumante">
+                <label for="small">Espumante</label>
 
-    
-</div>
+            </div>
 
+            <div>
+                <strong>Dejanos algun comentario para tener en cuenta en tu box</strong> <br>
+                <input type="text">
+            </div>
 
+            <div>
+                <input type="submit" id="btn-enviar">
+            </div>
 
-    </main>
-<script src="./JS/js-proyecto.js"></script>
+            <div id="modal" style="display: none;">
+                <p>Listo, ya enviamos tu box de este mes.</p>
+            </div>
+        </form>
+        </main>
+<scrip src="./JS/js-proyecto.js"></script>
 </body>
-
 </html>
