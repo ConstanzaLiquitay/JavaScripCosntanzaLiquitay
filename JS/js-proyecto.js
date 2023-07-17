@@ -1,84 +1,117 @@
-   // Función para obtener la edad del usuario
-   function obtenerEdad() {;
-    const edad = prompt( "Por favor, introduce tu edad:");
-    return parseInt(edad); // Convierte la cadena de texto a un número entero
-}
+ // Función para obtener la edad del usuario
+ function obtenerEdad() {
+  const edad = prompt("Por favor, introduce tu edad:");
+  return parseInt(edad); // Convierte la cadena de texto a un número entero
+};
 
 // Función para mostrar u ocultar la página según la edad del usuario
 function mostrarPagina() {
-    const edad = obtenerEdad();
+  const edad = obtenerEdad();
 
-    if (edad < 18) {
-        document.body.innerHTML = ""; // Limpia el contenido del body
-        alert("Lo siento, debes ser mayor de 18 años para ver esta página.");
-    } else {
-        // El usuario tiene 18 años o más, la página se muestra normalmente
-    }
-}
-
-// Llama a la función para mostrar u ocultar la página
-mostrarPagina();
-
-let carrito = []
-
-class productos {
-  constructor(id, imagen, nombre , descripcion, precio,boton) {
-    this.id = id;
-    this.imagen = imagen;
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.precio = precio;
+  if (edad >= 18) {
+      // El usuario tiene 18 años o más, se muestra la página normalmente
+      document.body.style.display = "block";
+  } else {
+      // El usuario es menor de 18 años, se oculta la página
+      document.body.style.display = "none";
+      alert("Lo siento, debes ser mayor de 18 años para ver esta página.");
   }
 }
 
-const Producto = [
-  new productos (1,'./Img/vinotrapiche.jpg', 'Iscay - Malbec Cabernet Franc','De color púrpura intenso, este vino combina aromas a violetas, frutas rojas maduras, sutiles notas especiadas y taninos generosos. El Malbec y el Cabernet Franc hacen una perfecta combinación que resulta en un ejemplar elegante y de final diáfano.', 12000),
-  new productos (2,'./Img/Medall-trapiche.jpg', 'Medall.trapiche.jpg','Medalla - Cabernet Suavignon','Este vino posee un color rojo intenso con tonos violetas. Expresa aromas complejos con notas de mermelada de ciruela, pimientos verdes, pasas de uva, tabaco y un delicado toque de roble. De sabor redondo, en boca es muy persistente, con taninos suaves y maduros.', 12600),
-  new productos (3, 'vino2trapiche.png','Terroir Series - Malbec','De color rojo violáceo intenso con aromas a frutos del bosque como moras y arándanos. En boca es fresco y redondo al comienzo con taninos dulces y tensos que le dan jugosidad y amplitud y elegancia en boca.', 18000),
-]
+// Llamamos a la función para mostrar u ocultar la página al cargar el sitio
+mostrarPagina();
 
-console.log(Producto)
-const productContainer = document.querySelector ('#container-productos');
 
-Producto.forEach(productos => {
-  const productDiv = document.createElement('div');
-  //innerHTML
-  productDiv.innerHTML = `
-  <div class='card'>
-  <p> ${productos.id} </p>
-  <p> ${productos.imagen}</p>
-  <p> ${productos.nombre} </p>
-  <p> ${productos.descripcion} </p>
-  <p> ${productos.precio} </p>
-  <button classs = "agregar-carrito"> Agregar al carrito </button>
-  </div> `;
-  
-  productContainer.appendChild(productDiv);
-  
-  const addButton = productDiv.querySelector('.agregar-carrito');
-  addButton.addEventListener('click', () => {
-    //Agregar al carrito 
-    debugger
-    carrito.push(producto);
+//Función para mostrar el modal
+function showModal() {
+  document.getElementById("modal").style.display = "block";
+}
+debugger
+// Función para guardar datos en el Storage
+function saveDataToStorage() {
+  // Aquí puedes guardar los datos que quieras en el Local Storage
+  const numeroDeSocio = document.getElementById("numerodesocio").value;
+  const bodegaSeleccionada = document.getElementById("bodega").value;
+  const tiposDeVino = document.querySelectorAll('input[name="tipodevino"]:checked');
+  const comentarios = document.querySelector('input[type="text"]').value;
 
-    //Guardar carrito
-    guardarCarrito(carrito);
+  const data = {
+    numeroDeSocio: numeroDeSocio,
+    bodegaSeleccionada: bodegaSeleccionada,
+    tiposDeVino: Array.from(tiposDeVino).map(input => input.value),
+    comentarios: comentarios
+  };
 
-    //Mostrar el modal
-    const modal = documente.getElementyById('modal');
-    modal.innerHTML = `
-    <div class="modal-content">
-    <h3> ${producto.id} </h3>
-    <h3> ${producto.nombre} </h3>
-    <h3> ${producto.precio} </h3>
-    </div>
-    `
- modal.style.display = 'block'
+  localStorage.setItem("wineBoxData", JSON.stringify(data));
+}
 
-  })
-  
-});
+// Función para manejar el evento de envío del formulario
+function handleSubmit(event) {
+  event.preventDefault(); // Evitar que se envíe el formulario
+  saveDataToStorage();
+  showModal();
+}
 
-function guardarCarrito(carrito){
-  localStorage.setItem('carrito', JSON, stingify(carrito))
-};
+// Función para cerrar el modal y limpiar el Local Storage
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+  localStorage.removeItem("wineBoxData");
+}
+
+// Manejadores de eventos
+document.getElementById("wineForm").addEventListener("submit", handleSubmit);
+document.getElementById("btn-enviar").addEventListener("click", handleSubmit);
+document.getElementById("modal").addEventListener("click", closeModal);
+
+
+  // Función para mostrar el SweetAlert cuando se presione el botón Enviar
+  function mostrarSweetAlert() {
+    Swal.fire({
+        title: "Estamos enviando tu box del mes",
+        icon: "info",
+        timer: 2000, // Duración del SweetAlert en milisegundos (en este caso, 2 segundos)
+        timerProgressBar: true,
+        showConfirmButton: false
+    });
+}
+
+// Función para guardar datos en el Storage (igual a la función anterior)
+function saveDataToStorage() {
+    // ...
+}
+
+// Función para manejar el evento de envío del formulario
+function handleSubmit(event) {
+    event.preventDefault();
+    saveDataToStorage();
+    mostrarSweetAlert(); // Llama a la función para mostrar el SweetAlert
+}
+
+// Manejador de evento para el envío del formulario
+document.getElementById("wineForm").addEventListener("submit", handleSubmit);
+
+ // Función para mostrar el SweetAlert cuando se presione el botón Enviar
+ function mostrarSweetAlert() {
+  Swal.fire({
+      title: "Estamos enviando tu box del mes",
+      icon: "info",
+      timer: 2000, // Duración del SweetAlert en milisegundos (en este caso, 2 segundos)
+      timerProgressBar: true,
+      showConfirmButton: false
+  });
+}
+
+// Función para guardar datos en el Storage (igual a la función anterior)
+function saveDataToStorage() {
+  // ...
+}
+
+// Función para manejar el evento de envío del formulario
+function handleSubmit(event) {
+  event.preventDefault();
+  saveDataToStorage();
+  mostrarSweetAlert(); // Llama a la función para mostrar el SweetAlert
+}
+
+// Manejador de evento para el envío del formulario
+document.getElementById("wineForm").addEventListener("submit", handleSubmit);
