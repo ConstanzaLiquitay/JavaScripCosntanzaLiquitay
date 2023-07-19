@@ -1,117 +1,61 @@
- // Función para obtener la edad del usuario
- function obtenerEdad() {
-  const edad = prompt("Por favor, introduce tu edad:");
-  return parseInt(edad); // Convierte la cadena de texto a un número entero
-};
-
-// Función para mostrar u ocultar la página según la edad del usuario
-function mostrarPagina() {
-  const edad = obtenerEdad();
-
-  if (edad >= 18) {
-      // El usuario tiene 18 años o más, se muestra la página normalmente
-      document.body.style.display = "block";
-  } else {
-      // El usuario es menor de 18 años, se oculta la página
-      document.body.style.display = "none";
-      alert("Lo siento, debes ser mayor de 18 años para ver esta página.");
+let carrito = [];
+class productos{
+  constructor(imagen,bodega, titulo,descripcion,precio){
+    this.imagen = imagen;
+    this.bodega = bodega
+    this.titulo = titulo;
+    this.descripcion = descripcion;
+    this.precio = precio;
   }
 }
 
-// Llamamos a la función para mostrar u ocultar la página al cargar el sitio
-mostrarPagina();
+const descProductos = [
+new productos('./Img/Medall-trapiche.jpg', 'Bodega Trapiche','Vino Medalla', 'En 1983 en homenaje a los 100 años de la bodega, emerge este vino de excepción elaborado con uvas provenientes de la Primera Zona vitivinícola mendocina', 1200),
+new productos('./Img/vino.bodegagraffigna.jpg', 'Bodega Graffigna','Vino Malbec', 'Con un profundo color rojo y tintes violetas, este Malbec destaca por su intensidad frutal aromática de bayas maduras, especias dulces y pimienta, junto a notas tostadas de crianza en roble.', 5000),
+new productos('./IMG/vino4trapiche.png', 'Bodega Trapiche','Vino Pinot Noir', 'Esta línea representa la más delicada selección de uvas con el fin de obtener ediciones auténticas de la costa y la pampa.', 1400),
+]
+
+const productContainer = document.querySelector('#product-container');
+
+descProductos.forEach(productos => {
+  const productDiv = document.createElement('div');
+  //innerHTML
+  productDiv.innerHTML = `
+  <div class ='card'>
+  <img src=${productos.imagen}></img>
+  <p>${productos.bodega}</p>
+  <h3>${productos.titulo}</h3>
+  <p>${productos.descripcion}</p>
+  <p>${productos.precio}</p>
+  <button class=comprar>Comprar</button>
+  <button class= vermas>Ver Mas</button>
+  </div>
+  `;
 
 
-//Función para mostrar el modal
-function showModal() {
-  document.getElementById("modal").style.display = "block";
+  productContainer.appendChild(productDiv);
+
+ const addButton =  productDiv.querySelector('.comprar');
+addButton.addEventListener('click',() =>{
+
+  carrito.push(productos);
+
+  //Guardamos al carrito
+  guardarcarrito(carrito)
+
+  const modal = document.getElementById('modal');
+  modal.innerHTML = `
+  <div class="modal-content">
+  <h3>${productos.titulo}</h3>
+  <p>${productos.descripcion}</p>
+  <p>${productos.precio}</p>
+  </div> `
+
+  modal.style.display = 'block'
+})
+
+})
+
+function guardarcarrito(carrito){
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
-debugger
-// Función para guardar datos en el Storage
-function saveDataToStorage() {
-  // Aquí puedes guardar los datos que quieras en el Local Storage
-  const numeroDeSocio = document.getElementById("numerodesocio").value;
-  const bodegaSeleccionada = document.getElementById("bodega").value;
-  const tiposDeVino = document.querySelectorAll('input[name="tipodevino"]:checked');
-  const comentarios = document.querySelector('input[type="text"]').value;
-
-  const data = {
-    numeroDeSocio: numeroDeSocio,
-    bodegaSeleccionada: bodegaSeleccionada,
-    tiposDeVino: Array.from(tiposDeVino).map(input => input.value),
-    comentarios: comentarios
-  };
-
-  localStorage.setItem("wineBoxData", JSON.stringify(data));
-}
-
-// Función para manejar el evento de envío del formulario
-function handleSubmit(event) {
-  event.preventDefault(); // Evitar que se envíe el formulario
-  saveDataToStorage();
-  showModal();
-}
-
-// Función para cerrar el modal y limpiar el Local Storage
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-  localStorage.removeItem("wineBoxData");
-}
-
-// Manejadores de eventos
-document.getElementById("wineForm").addEventListener("submit", handleSubmit);
-document.getElementById("btn-enviar").addEventListener("click", handleSubmit);
-document.getElementById("modal").addEventListener("click", closeModal);
-
-
-  // Función para mostrar el SweetAlert cuando se presione el botón Enviar
-  function mostrarSweetAlert() {
-    Swal.fire({
-        title: "Estamos enviando tu box del mes",
-        icon: "info",
-        timer: 2000, // Duración del SweetAlert en milisegundos (en este caso, 2 segundos)
-        timerProgressBar: true,
-        showConfirmButton: false
-    });
-}
-
-// Función para guardar datos en el Storage (igual a la función anterior)
-function saveDataToStorage() {
-    // ...
-}
-
-// Función para manejar el evento de envío del formulario
-function handleSubmit(event) {
-    event.preventDefault();
-    saveDataToStorage();
-    mostrarSweetAlert(); // Llama a la función para mostrar el SweetAlert
-}
-
-// Manejador de evento para el envío del formulario
-document.getElementById("wineForm").addEventListener("submit", handleSubmit);
-
- // Función para mostrar el SweetAlert cuando se presione el botón Enviar
- function mostrarSweetAlert() {
-  Swal.fire({
-      title: "Estamos enviando tu box del mes",
-      icon: "info",
-      timer: 2000, // Duración del SweetAlert en milisegundos (en este caso, 2 segundos)
-      timerProgressBar: true,
-      showConfirmButton: false
-  });
-}
-
-// Función para guardar datos en el Storage (igual a la función anterior)
-function saveDataToStorage() {
-  // ...
-}
-
-// Función para manejar el evento de envío del formulario
-function handleSubmit(event) {
-  event.preventDefault();
-  saveDataToStorage();
-  mostrarSweetAlert(); // Llama a la función para mostrar el SweetAlert
-}
-
-// Manejador de evento para el envío del formulario
-document.getElementById("wineForm").addEventListener("submit", handleSubmit);
