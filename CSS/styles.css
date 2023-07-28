@@ -6,42 +6,47 @@
 
 .contenedor {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
+    margin: 10px;
 
 }
 
 
-.container-img{
+.container-img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .imgvino {
-height: 350px;
-width: 200px;
+    height: 340px;
+    width: 340px;
 }
 
-.containerProd{
-padding: 20px;
-border: 2px solid #c86100;
+.containerProd {
+    padding: 20px;
+    border: 2px solid #c86100;
 }
 
-.logobodegas{
+.logobodegas {
     width: 160px;
     height: 160px;
     border-radius: 50%;
 }
 
-.container-logos{
+.container-logos {
     background-color: #c86100;
 }
 
-.restar{
+.restar {
     cursor: pointer;
 }
 
-.sumar{
+.sumar {
+    cursor: pointer;
+}
+.link-product{
     cursor: pointer;
 }
