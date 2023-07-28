@@ -3,3 +3,45 @@
     margin: 3px;
     text-decoration: none;
 }
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+
+}
+
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgvino {
+height: 350px;
+width: 200px;
+}
+
+.containerProd{
+padding: 20px;
+border: 2px solid #c86100;
+}
+
+.logobodegas{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.container-logos{
+    background-color: #c86100;
+}
+
+.restar{
+    cursor: pointer;
+}
+
+.sumar{
+    cursor: pointer;
+}
