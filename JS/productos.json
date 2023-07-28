@@ -1,0 +1,74 @@
+{"descProductos" :[
+    {
+        "imagen":"./Img/Medalla.png",
+        "bodega":"Bodega Trapiche",
+        "titulo": "Vino Medalla",
+        "descripcion": "En 1983 en homenaje a los 100 años de la bodega, emerge este vino de excepción elaborado con uvas provenientes de la Primera Zona vitivinícola mendocina",
+        "precio": 10000,
+        "cantidad" : 1
+    },
+    {
+        "imagen":"./Img/Graffigna-malbec.png",
+        "bodega":"Bodega Graffigna",
+        "titulo": "Vino Malbec",
+        "descripcion": "Con un profundo color rojo y tintes violetas, este Malbec destaca por su intensidad frutal aromática de bayas maduras, especias dulces y pimienta, junto a notas tostadas de crianza en roble.",
+        "precio": 7000,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/Graffigna-malbec-selecction.png",
+        "bodega":"Bodega Graffigna",
+        "titulo": "Vino Malbec Selection",
+        "descripcion": "De profundo color púrpura con matices violáceos. Se expresa con aromas frutales intensos que se armonizan con las notas de su crianza en madera. Ideal para acompañar un buen asado argentino, empanadas criollas o comidas picantes.",
+        "precio": 10000,
+        "cantidad" : 1
+    },
+    {
+        "imagen":"./Img/costa-pampa.png",
+        "bodega":"Bodega Trapiche",
+        "titulo": "Vino Pinot Noir",
+        "descripcion": "Esta línea representa la más delicada selección de uvas con el fin de obtener ediciones auténticas de la costa y la pampa.",
+        "precio": 10400,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/Chiaropuro.png",
+        "bodega":"Bodega Roccasveva",
+        "titulo": "Vino Blanco Veronés Igt",
+        "descripcion": "En boca es con cuerpo y equilibrado con una ligera nota balsámica de tilo y salvia. Una extraordinaria combinación de sabor, profundidad aromática y plenitud de sorbo.",
+        "precio": 20400,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/Amarone-Della.png",
+        "bodega":"Bodega Roccasveva",
+        "titulo": "Amarone Della Valpolicella Docg ",
+        "descripcion": "Es amplio, cálido y suave, con taninos armoniosos y aterciopelados, de larga y agradable persistencia.",
+        "precio": 15000,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/vino-ruinart-brut.png",
+        "bodega":"Bodega Ruinart",
+        "titulo": "Champane Ruinart Brut ",
+        "descripcion": "Ruinart Brut es un champán armonioso, producido a partir de una mezcla de pinot noir (40–45 %), meunier (10–15 %) y chardonnay fresco (40 %). Creado a partir de 40–50 crus diferentes de los terroirs de Côte des Blancs y Montagne de Reims.",
+        "precio": 12000,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/champañe-donruinart-rose.png",
+        "bodega":"Bodega Ruinart",
+        "titulo": "Don Ruinart Rose",
+        "descripcion": "En boca revela sabores de ciruela e hibisco, complementados con notas cítricas maduras que se hacen eco del perfil olfativo. La cuvée presenta un perfil vibrante respaldado por una hermosa frescura en el final.",
+        "precio": 12000,
+        "cantidad" : 1 
+    },
+    {
+        "imagen":"./Img/isac.png",
+        "bodega":"Bodega Trapiche",
+        "titulo": "Vino Isac Malbec",
+        "descripcion": "De color púrpura intenso, este vino combina aromas a violetas, frutas rojas maduras, sutiles notas especiadas y taninos generosos. El Malbec y el Cabernet Franc hacen una perfecta combinación que resulta en un ejemplar elegante y de final diáfano.",
+        "precio": 10000,
+        "cantidad" : 1 
+    }
+]}
