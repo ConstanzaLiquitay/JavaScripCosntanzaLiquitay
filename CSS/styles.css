@@ -36,6 +36,9 @@
     border-radius: 50%;
 }
 
+.logobodegas:hover{
+    transform:rotate3d(2, 2, 2, 30deg);
+}
 .container-logos {
     background-color: #c86100;
 }
@@ -49,4 +52,12 @@
 }
 .link-product{
     cursor: pointer;
+}
+
+.container-sub-titulo{
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c86100;
 }
